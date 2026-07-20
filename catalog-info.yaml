@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: flowsource-demo
+  title: FlowSource Jenkins Demo
+  description: Demo component integrated with Jenkins CI/CD
+  appid: flowsource-demo
+  annotations:
+    flowsource/jenkins-pipelines: flowsource-demo
+spec:
+  type: service
+  lifecycle: production
+  owner: guest
