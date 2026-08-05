@@ -1,13 +1,25 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
+
 metadata:
-  name: flowsource-demo
-  title: FlowSource Jenkins Demo
-  description: Demo component integrated with Jenkins CI/CD
-  appid: flowsource-demo
+  name: sdlc-plugins
+  title: SDLC
+  description: SDLC plugin for Flowsource
+  appid: sdlc-plugins
   annotations:
-    flowsource/jenkins-pipelines: flowsource-demo
+    # For GitHub plugin    
+    flowsource/github-repo-owner: suremine-cts    
+    flowsource/github-repo-name: fs-sdlc-plugins    
+    
+    # For JIRA plugin    
+    flowsource/jira-project-key: ISGFS    
+    flowsource/durationInDays: "90"    
+    
+    # For Jenkins plugin    
+    # flowsource/jenkins-pipelines: fs-sdlc/main   
+
 spec:
-  type: service
-  lifecycle: production
-  owner: guest
+  type: backstage-frontend-plugin
+  lifecycle: experimental
+  owner: group:default/platform-team
+  system: flowsource
